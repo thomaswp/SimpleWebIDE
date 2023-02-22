@@ -1,0 +1,108 @@
+/* .code {
+    display:inline-block
+}
+
+.code.vertical {
+    display: block;
+}
+
+.code.vertical .code {
+    display: block;
+} */
+
+.code-container {
+    border: 1px solid #eee;
+    padding: 15px;
+    height: 100%;
+}
+
+level-controls {
+    width: 100%;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.code-content {
+    white-space: pre;
+    font-family: monospace;
+    font-size: 1.5em;
+}
+
+.code.literal {
+    color: rgb(0, 0, 75);
+    /* font-weight: bold; */
+}
+
+.code.literal.list {
+    color: rgb(101, 0, 141);
+}
+
+.code.control {
+    color: rgb(122, 65, 0);
+}
+
+.code.call {
+    font-weight: bold;
+}
+
+.code.node {
+    background-color: white;
+}
+
+.code.finished {
+    /* opacity: 0.6; TODO: Fix so parents don't leak to children */
+}
+
+.code.running {
+    opacity: 1;
+    background-color: yellow;
+}
+
+
+stick-display {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+html, body, main-display {
+    height: 100%;
+}
+
+.main-container {
+    height: 100%;
+    display: flex;
+}
+
+.levels {
+    overflow-y: auto;
+    height: 100%;
+}
+
+.level-layout {
+    display: flex;
+    margin: 10px;
+}
+
+.code-content {
+    display: inline-block;
+    min-width: 400px;
+}
+
+.info-panel-right {
+    display: inline-block;
+}
+
+.marker {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.5rem;
+    border: solid black 1px;
+    background-color: rgb(153, 0, 0);
+    position: absolute;
+    transition: all 0.2s;
+}
+
+.hidden {
+    display: none;
+}

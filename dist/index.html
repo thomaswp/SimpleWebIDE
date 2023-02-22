@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Python parser hints generator</title>
+
+    <script src="lib/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/ide.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/main.css"  rel="stylesheet">
+    <link href="css/sidebars.css"  rel="stylesheet">
+
+</head>
+
+
+<body>
+<div class="container padding-top-xs">
+    <form id="myForm">
+        <div class="row">
+            <div class="col">
+                <p style="opacity:0.0;">Padding-top</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input list="problems" name="problem_name" id="problem_name" type="text" class="form-control"
+                       placeholder="Problem Id"/>
+                <datalist id="problems">
+                </datalist>
+            </div>
+            <div class="col">
+                <input name='user_id' id='user_id' type="text" class="form-control" placeholder="User Id">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p style="opacity:0.0;">Padding-top</p>
+            </div>
+        </div>
+        <div class='row'>
+            <div class="col">
+                <textarea name="student_code" id="student_code"></textarea>
+            </div>
+        </div>
+        <div id="div-display"></div>
+        <div class="row">
+            <div class="col">
+                <p style="opacity:0.0;">Padding-top</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="button" id="submit" class="btn btn-success">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="js/hints.js"></script>
+
+</body>
