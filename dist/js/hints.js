@@ -11,6 +11,13 @@ function createEditor() {
     editor.setOptions({
         fontSize: "12pt"
     });
+    editor.getSession().on('change', function() {
+        let value = editor.getValue();
+        textarea.value = value;
+        if (window.onAceEdited) {
+            window.onAceEdited(value);
+        }
+    });
     // replace textarea with ace
     textarea.parentNode.insertBefore(editor.container, textarea)
     textarea.style.display = "none"

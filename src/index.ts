@@ -25,6 +25,10 @@ window.onload = () => {
         eventHandler.handleEvent("Submit", stateTracker.getState());
     });
 
+    window["onAceEdited"] = () => {
+        eventHandler.handleEvent("File.Edit", stateTracker.getState());
+    }
+
     actionHandler.registerAction("ShowDiv", (data) => {
         document.getElementById("div-display").innerHTML = data.html;
     });

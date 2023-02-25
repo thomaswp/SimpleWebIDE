@@ -16,7 +16,6 @@ export class EventHandler {
             const endpoint = config.enpoints[endpointName];
             if (endpoint.events[type] !== undefined) {
                 let url = endpoint.baseUrl + endpoint.events[type];
-                console.log(url);
                 fetch(url, {
                     method: "POST",
                     headers: {
