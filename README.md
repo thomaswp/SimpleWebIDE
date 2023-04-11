@@ -1,15 +1,15 @@
-#SimpleWebIDE
+# SimpleWebIDE
 
 For text-based languages, the easiest way to test feedback is to use SimpleWebIDE. It emulated a web-based IDE. This IDE cannot run code (yet), and just monitors events to sent to the SimpleAIF service.
 
-##Setup
+## Setup
 
 To set up the development environment:
 1. Install [node.js](https://nodejs.org/en)
 2. Run npm install in the project directory. This will install dependencies.
 3. Install a web host (e.g. XAMPP) or the VSCode Live Server extension.
 
-##Usage
+## Usage
 
 To run the code:
 1. Ensure the src/config.ts file is up to date:
