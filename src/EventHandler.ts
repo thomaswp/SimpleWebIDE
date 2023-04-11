@@ -12,8 +12,8 @@ export class EventHandler {
     }
 
     handleEvent(type: string, data: State) {
-        for (let endpointName in config.enpoints) {
-            const endpoint = config.enpoints[endpointName];
+        for (let endpointName in config.endpoints) {
+            const endpoint = config.endpoints[endpointName];
             if (endpoint.events[type] !== undefined) {
                 let url = endpoint.baseUrl + endpoint.events[type];
                 fetch(url, {
