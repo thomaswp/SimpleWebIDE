@@ -17,7 +17,7 @@ To run the code:
     - The baseURL for the endpoint is configured for your hint server (e.g. localhost:5000).
 2. Run:
 ```bash
-npm run dev.
+npm run dev
 ```
 3. Make sure your web server is running and serving the dist directory (this is where the build ts → js files will go).
 Go to ``index.html``, which will redirect you to ``dist/``.
