@@ -27,7 +27,12 @@ export class StateTracker {
 
         state.SubjectID = (<HTMLInputElement>document.getElementById("user_id")).value;
         state.ClientTimestamp = new Date().toDateString();
-        state.ProblemID = (<HTMLInputElement>document.getElementById("problem_name")).value;
+        let problemNameInput = (<HTMLInputElement>document.getElementById("problem_name"));
+        let value = problemNameInput.value;
+        var option = Array.prototype.find.call((<HTMLSelectElement>problemNameInput.list).options, function(option) {
+            return option.value === value;
+        });
+        state.ProblemID = option.dataset.value;
         state.Attempt = this.nAttempts;
         state.CodeState = (<HTMLTextAreaElement>document.querySelector("form textarea[name=student_code]")).value;
 

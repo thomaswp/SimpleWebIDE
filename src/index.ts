@@ -13,7 +13,7 @@ window.onload = () => {
         problems.appendChild(option)
     }
 
-    let defaultProblem = "139";
+    let defaultProblem = "1";
     (<HTMLInputElement>document.getElementById("problem_name")).value = defaultProblem + " - " + config.problems[defaultProblem];
 
     const actionHandler = new ActionHandler();
@@ -22,7 +22,13 @@ window.onload = () => {
 
     document.getElementById("submit").addEventListener('click', () => {
         stateTracker.incrementAttempt();
-        eventHandler.handleEvent("Submit", stateTracker.getState());
+        let state = stateTracker.getState();
+        let score = (<HTMLInputElement>document.getElementById("score-input")).value;
+        let numericScore = parseInt(score);
+        if (!isNaN(numericScore)) {
+            state["Score"] = numericScore;
+        }
+        eventHandler.handleEvent("Submit", state);
     });
 
     window["onAceEdited"] = () => {
