@@ -32,7 +32,11 @@ export class StateTracker {
         var option = Array.prototype.find.call((<HTMLSelectElement>problemNameInput.list).options, function(option) {
             return option.value === value;
         });
-        state.ProblemID = option.dataset.value;
+        if (option) {
+            state.ProblemID = option.dataset.value;
+        } else {
+            state.ProblemID = problemNameInput.value;
+        }
         state.Attempt = this.nAttempts;
         state.CodeState = (<HTMLTextAreaElement>document.querySelector("form textarea[name=student_code]")).value;
 
