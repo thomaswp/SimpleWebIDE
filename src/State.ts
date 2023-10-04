@@ -8,6 +8,8 @@ export class State {
     ProblemID: string;
     Attempt: number;
     CodeState: string;
+    ShouldLog: boolean;
+    Score: number;
 }
 
 export class StateTracker {
@@ -26,7 +28,7 @@ export class StateTracker {
         this.nextEventID++;
 
         state.SubjectID = (<HTMLInputElement>document.getElementById("user_id")).value;
-        state.ClientTimestamp = new Date().toDateString();
+        state.ClientTimestamp = new Date().toISOString();
         let problemNameInput = (<HTMLInputElement>document.getElementById("problem_name"));
         let value = problemNameInput.value;
         var option = Array.prototype.find.call((<HTMLSelectElement>problemNameInput.list).options, function(option) {
@@ -39,6 +41,8 @@ export class StateTracker {
         }
         state.Attempt = this.nAttempts;
         state.CodeState = (<HTMLTextAreaElement>document.querySelector("form textarea[name=student_code]")).value;
+        state.ShouldLog = (<HTMLInputElement>document.getElementById("should-log")).checked;
+        state.Score = parseFloat((<HTMLInputElement>document.getElementById("score-input")).value);
 
         return state;
     }
