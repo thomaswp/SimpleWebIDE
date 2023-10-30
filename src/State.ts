@@ -44,6 +44,9 @@ export class StateTracker {
         state.ShouldLog = (<HTMLInputElement>document.getElementById("should-log")).checked;
         state.Score = parseFloat((<HTMLInputElement>document.getElementById("score-input")).value);
 
+        localStorage.setItem("ProblemID", state.ProblemID);
+        localStorage.setItem("CodeState", state.CodeState);
+
         return state;
     }
 }

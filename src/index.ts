@@ -39,4 +39,11 @@ window.onload = () => {
         document.getElementById("div-display").innerHTML = data.html;
     });
 
+    let lastProblemID = localStorage.getItem("ProblemID");
+    if (lastProblemID) {
+        (<HTMLInputElement>document.getElementById("problem_name")).value = lastProblemID;
+    }
+
+
+    eventHandler.handleEvent("File.Edit", stateTracker.getState());
 }

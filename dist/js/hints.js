@@ -28,6 +28,11 @@ function createEditor() {
         // update value of textarea to match value in ace
         textarea.value = editor.getValue()
 
-    }, true)
+    }, true);
+
+    let lastCodeState = localStorage.getItem("CodeState");
+    if (lastCodeState) {
+        editor.setValue(lastCodeState);
+    }
 }
 createEditor();
