@@ -16,6 +16,10 @@ export class ActionHandler {
                 this.handleError(new Error(`Action without type ${action}`));
             }
         });
+        if (actions.length === 0) {
+            // Clear div
+            this.handleAction("ShowDiv", {html: 'No actions received...'});
+        }
     }
 
     handleAction(type: string, data: any) {
