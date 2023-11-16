@@ -8,7 +8,8 @@ export class State {
     ProblemID: string;
     Attempt: number;
     CodeState: string;
-    ShouldLog: boolean;
+    ShouldLog?: boolean;
+    NoLogging?: boolean;
     Score: number;
 }
 
@@ -42,6 +43,7 @@ export class StateTracker {
         state.Attempt = this.nAttempts;
         state.CodeState = (<HTMLTextAreaElement>document.querySelector("form textarea[name=student_code]")).value;
         state.ShouldLog = (<HTMLInputElement>document.getElementById("should-log")).checked;
+        state.NoLogging = !state.ShouldLog;
         state.Score = parseFloat((<HTMLInputElement>document.getElementById("score-input")).value);
 
         localStorage.setItem("ProblemID", state.ProblemID);
